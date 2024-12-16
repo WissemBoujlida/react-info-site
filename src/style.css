@@ -4,12 +4,17 @@ body {
     height: 100vh;
 }
 
-.navbar {
-    background-color: #21222A;
+/*
+    navbar styles
+*/
+nav {
+    background-color: #ffffff;
     display: flex;
     align-items: center;
-    height: 90px;
+    height: 60px;
     padding: 30px 25px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
 }
 
 .navbar--logo-text,
@@ -25,22 +30,76 @@ body {
 }
 
 .navbar--title {
-    color: #DEEBF8;
+    color: #2B283A;
     font-weight: 600;
+    margin-right: 20px;
 }
 
 .navbar--logo {
     height: 30px;
-    margin-right: 7px;
+    margin-right: 10px;
 }
 
-.main {
-    background-color: #282D35;
-    background-image: url("./images/react-icon-large.png");
+.toggler {
+    display: flex;
+    align-items: center;
+}
+
+/*
+    Light and Dark p text
+*/
+.toggler--light {
+    color: #2B283A;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+.toggler p {
+    font-size: 0.625rem;
+    font-weight: 600;
+}
+
+/*
+    toggler slider
+*/
+.toggler--slider {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40px;
+    height: 20px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+/*
+    toggler slider circle
+*/
+.toggler--slider--circle {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/*
+    main section styles
+*/
+
+main {
+    background-color: white;
+    background-image: url("./images/react-icon-light.png");
     background-repeat: no-repeat;
-    background-position: right 75%;
+    background-position: right center;
+    flex: 1 1 auto;
     padding: 60px 25px;
-    color: #FFFFFF;
+    color: #2B283A;
 }
 
 .main--title {
@@ -63,4 +122,72 @@ body {
 .main--list>li::marker {
     font-size: 1.4rem;
     color: #61DAFB;
+}
+
+/*
+    when dark mode is activated
+*/
+
+/*
+    when dark mode is activated:
+        change navbar background color to #21222A
+*/
+nav.dark {
+    background-color: #21222A;
+}
+
+/*
+    when dark mode is activated:
+        change toggler slider background color to #F5F5F5
+        change toggler slider border color to white
+        align toggler slider to the end
+*/
+nav.dark .toggler--slider {
+    justify-content: flex-end;
+    border-color: white;
+    background-color: #F5F5F5;
+}
+
+/*
+    when dark mode is activated:
+        change toggler slider circle background color to black
+*/
+nav.dark .toggler--slider--circle {
+    background-color: black;
+}
+
+/*
+    when dark mode is activated:
+        change toggler "Dark" text color to white
+*/
+nav.dark .toggler--dark {
+    color: white;
+}
+
+/*
+    when dark mode is activated:
+        change toggler "Light" text color to #918E9B
+*/
+nav.dark .toggler--light {
+    color: #918E9B;
+}
+
+/*
+    when dark mode is activated:
+        change text color to white
+*/
+nav.dark .navbar--title {
+    color: white;
+}
+
+/*
+    when dark mode is activated:
+        change main section of the page background image react-icon-dark
+        change main section of the page background color to #282D35
+        change text color to white
+*/
+main.dark {
+    background-image: url("./images/react-icon-dark.png");
+    background-color: #282D35;
+    color: white;
 }
